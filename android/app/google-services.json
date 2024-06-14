@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "905888275770",
+    "project_id": "flutter-push-b2e17",
+    "storage_bucket": "flutter-push-b2e17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905888275770:android:d7a555aef3d58295914403",
+        "android_client_info": {
+          "package_name": "com.kewincaviedes.push_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIDbFhRkVbkfyIlzbmnJ5FMEYmU8kJgYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

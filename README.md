@@ -22,7 +22,7 @@ Push Notifications App es un proyecto diseñado para probar notificaciones push 
 1. **Clona el repositorio:**
 
    ```bash
-   git clone https://github.com/Kandriws/push_notifications_app.git
+   git clone https://github.com/Kandriws/push_notifications_firebase.git
    cd push_notifications_app
    ```
 

@@ -4,15 +4,23 @@ import 'package:push_app/config/router/app_router.dart';
 import 'package:push_app/config/theme/app_theme.dart';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:push_app/local_notifications/local_notifications.dart';
 import 'package:push_app/presentation/blocs/notifications/notifications_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   await NotificationsBloc.initializedFCM();
-  runApp(MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => NotificationsBloc())],
-      child: const MainApp()));
+  await LocalNotifications.initializeLocalNotifications();
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(
+      create: (context) => NotificationsBloc(
+        requestLocalNotificationPermission:
+            LocalNotifications.requestPermissionLocalNotifications,
+            showLocalNotification: LocalNotifications.showNotification,
+      ),
+    )
+  ], child: const MainApp()));
 }
 
 class MainApp extends StatelessWidget {
